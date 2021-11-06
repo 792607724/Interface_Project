@@ -9,6 +9,10 @@ import json
 
 cur_time = time.strftime("%Y%m%d")
 
+"""
+    脚本用于转换激光雷达保存的json数据为excel格式方便数据统计
+"""
+
 
 def json_to_excel(json_path, excel_path):
     """
