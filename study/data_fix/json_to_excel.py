@@ -11,18 +11,29 @@ cur_time = time.strftime("%Y%m%d")
 
 
 def json_to_excel(json_path, excel_path):
+    """
+        自定义列表数据转换title
+    """
     # df = pd.DataFrame(columns=["number", "voltage"])
     df = pd.DataFrame(columns=["number", "rpm"])
+
     df.to_excel(excel_path, index=False)
     print("{} excel generate success!".format(excel_path))
 
     with open(json_path, "r") as json_file:
         json_data = json.load(json_file)
+    """
+        自定义json获取对象title
+    """
     # voltage_raw_data = json_data["vol"]
     rpm_raw_data = json_data["rpm"]
+
     df_2 = pd.read_excel(excel_path, header=None, engine="openpyxl")
     all_list = []
     i = 0
+    """
+        自定义遍历数据集
+    """
     for voltage_item in rpm_raw_data:
         i += 1
         temp_list = []
