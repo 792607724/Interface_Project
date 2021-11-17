@@ -1,7 +1,6 @@
 # coding = utf8
 
 import os
-import subprocess
 
 os.path.abspath(".")
 import time
@@ -57,4 +56,3 @@ if __name__ == '__main__':
     # excel_path = "./voltage_{}.xlsx".format(cur_time)
     excel_path = "./rpm_{}.xlsx".format(cur_time)
     json_to_excel(json_path, excel_path)
-
