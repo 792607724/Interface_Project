@@ -57,7 +57,7 @@ if __name__ == '__main__':
     # excel_path = "./rpm_{}.xlsx".format(cur_time)
     # json_to_excel(json_path, excel_path)
 
-    # list1 = [1, 2, 3, 4]
+    # list1 = [1, 2, 3, 4] a
     # list2 = [5, 6, 7, 8]
     # list3 = [1, 2]
     # n = 0
