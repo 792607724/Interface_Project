@@ -50,9 +50,34 @@ def json_to_excel(json_path, excel_path):
 
 
 if __name__ == '__main__':
-    # json_path = "./voltage_20211105115538.json"
-    json_path = "./rpm_20211105115550.json"
+    # # json_path = "./voltage_20211105115538.json"
+    # json_path = "./rpm_20211105115550.json"
+    #
+    # # excel_path = "./voltage_{}.xlsx".format(cur_time)
+    # excel_path = "./rpm_{}.xlsx".format(cur_time)
+    # json_to_excel(json_path, excel_path)
 
-    # excel_path = "./voltage_{}.xlsx".format(cur_time)
-    excel_path = "./rpm_{}.xlsx".format(cur_time)
-    json_to_excel(json_path, excel_path)
+    # list1 = [1, 2, 3, 4]
+    # list2 = [5, 6, 7, 8]
+    # list3 = [1, 2]
+    # n = 0
+    # if len(list3) > 1:
+    #     for i, j in zip(list1, list2):
+    #         n += 1
+    #         print(">2 : n = " + str(n))
+    #         print("list1: " + str(i))
+    #         print("list2: " + str(j), end="\n\n")
+    #
+    # else:
+    #     n += 1
+    #     print("<2 : n = " + str(n), end="\n\n")
+    from kivy.app import App
+    from kivy.uix.button import Button
+
+
+    class TestApp(App):
+        def build(self):
+            return Button(text="Hello!!!!!")
+
+
+    TestApp().run()
