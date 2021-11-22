@@ -162,6 +162,17 @@ class OperationDbInterface(object):
             self.log_print(e, level=logging.DEBUG)
         return result
 
+    def close_db(self):
+        """
+        close database
+        @return:None
+        """
+        if self.cur:
+            self.cur.close()
+        if self.conn:
+            self.conn.close()
+        print("Database close success!")
+
 
 if __name__ == '__main__':
     print(config.src_path)
@@ -186,3 +197,5 @@ if __name__ == '__main__':
             "insert into config_total (key_config, value_config, description, status) values (%s, %s, %s, %s)",
             [("5", "Tom", "1 year 1 class", "6"), ("6", "Jimmy", "2 year 2 class", "8")])["data"]
     print("insert success affect number:{}".format(insert_count))
+    a.close_db()
+    # upload to zhihu.com
