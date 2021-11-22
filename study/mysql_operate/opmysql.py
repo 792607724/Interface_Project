@@ -84,7 +84,7 @@ class OperationDbInterface(object):
     def op_sql(self, condition):
         """
         Define single statement's operation, include delete、update.
-        @param condition:SQL statement, the common use function can replace updateone\deleteone
+        @param condition:Common SQL statement, the common use function can replace updateone\deleteone
         @return:dictionary type
         """
         try:
@@ -103,7 +103,7 @@ class OperationDbInterface(object):
     def select_one(self, condition):
         """
         single query data
-        @param condition:SQL statement
+        @param condition:Query SQL statement
         @return:dictionary type
         """
         try:
@@ -122,17 +122,67 @@ class OperationDbInterface(object):
             self.log_print(e, level=logging.DEBUG)
         return result
 
+    def select_all(self, condition):
+        """
+        multiple query data
+        @param condition:Query SQL statement
+        @return:dictionary type with multiple data contained
+        """
+        try:
+            rows_affect = self.cur.execute(condition)
+            if rows_affect > 0:
+                # move mouse cursor to initial site
+                self.cur.scroll(0, mode="absolute")
+                results = self.cur.fetchall()
+                result = {"code": "0000", "message": "Multiple query operation execute success", "data": results}
+            else:
+                result = {"code": "0000", "message": "Multiple query operation execute success", "data": []}
+        except pymysql.Error as e:
+            self.conn.rollback()
+            result = {"code": "9999", "message": "Multiple query operation execute abnormal", "data": []}
+            print("Database failure | select_all %d: %s" % (e.args[0], e.args[1]))
+            self.log_print(e, level=logging.DEBUG)
+        return result
+
+    def insert_data(self, condition, params):
+        """
+        Define insert operation
+        @param condition:Insert SQL statement, such like:insert into config_total (key_config, value_config, description, status) values (%s, %s, %s, %s)
+        @param params:insert data ,use list form such like:[("3", "Tom", "1 year 1 class", "6"), ("3", "Tom", "1 year 1 class", "6")]
+        @return:dictionary multiple insert result
+        """
+        try:
+            results = self.cur.executemany(condition, params)
+            self.conn.commit()
+            result = {"code": "0000", "message": "Multiple insert operation execute success", "data": results}
+        except pymysql.Error as e:
+            self.conn.rollback()
+            result = {"code": "9999", "message": "Multiple insert operation execute abnormal", "data": []}
+            print("Database failure | insert_more %d: %s" % (e.args[0], e.args[1]))
+            self.log_print(e, level=logging.DEBUG)
+        return result
+
 
 if __name__ == '__main__':
     print(config.src_path)
     a = OperationDbInterface()
-    result = a.select_one("select * from config_total where id=1")
-    for key, value in result["data"].items():
-        print("{} : {}".format(key, value))
+    # result = a.select_one("select * from config_total where id=1")
+    # results = a.select_all("select * from config_total")
+    # for key, value in result["data"].items():
+    #     print("{} : {}".format(key, value))
+    # for item_i in results["data"]:
+    #     for key, value in item_i.items():
+    #         print("{} : {}".format(key, value))
     # a.op_sql("delete from config_total where id>1")
+    # Make auto_increment from 1 for beginning
     # a.op_sql("alter table config_total auto_increment=1")
     # a.op_sql(
     #     "insert into config_total (key_config, value_config, description, status) values ('test', 'value_test', '测试配置', '1')")
     # for i in range(9999):
     #     a.op_sql(
     #         "insert into config_total (key_config, value_config, description, status) values ('test', 'value_test', '测试配置', '1')")
+    insert_count = \
+        a.insert_data(
+            "insert into config_total (key_config, value_config, description, status) values (%s, %s, %s, %s)",
+            [("5", "Tom", "1 year 1 class", "6"), ("6", "Jimmy", "2 year 2 class", "8")])["data"]
+    print("insert success affect number:{}".format(insert_count))
