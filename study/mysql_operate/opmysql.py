@@ -198,4 +198,44 @@ if __name__ == '__main__':
             [("5", "Tom", "1 year 1 class", "6"), ("6", "Jimmy", "2 year 2 class", "8")])["data"]
     print("insert success affect number:{}".format(insert_count))
     a.close_db()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     # upload to zhihu.com
+
