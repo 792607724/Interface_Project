@@ -195,7 +195,7 @@ if __name__ == '__main__':
     insert_count = \
         a.insert_data(
             "insert into config_total (key_config, value_config, description, status) values (%s, %s, %s, %s)",
-            [("5", "Tom", "1 year 1 class", "6"), ("6", "Jimmy", "2 year 2 class", "8")])["data"]
+            [("1", "Tom", "1 year 1 class", "6"), ("2", "Jimmy", "2 year 2 class", "8")])["data"]
     print("insert success affect number:{}".format(insert_count))
     a.close_db()
 
