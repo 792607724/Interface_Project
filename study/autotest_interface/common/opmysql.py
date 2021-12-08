@@ -1,9 +1,9 @@
 # coding = utf8
 import os
 
-from study.autotest_interface import config
+from study.autotest_interface.common import config
 
-os.path.abspath(".")
+os.path.abspath("..")
 """
     @Project:Interface_Project
     @File:opmysql.py

@@ -1,7 +1,7 @@
 # coding = utf8
 import os
 
-os.path.abspath(".")
+os.path.abspath("..")
 """
     @Project:Interface_Project
     @File:config.py
@@ -9,5 +9,5 @@ os.path.abspath(".")
     @Date:2021/11/22 11:44
 """
 
-src_path = os.path.dirname(os.path.realpath(__file__))
+src_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
