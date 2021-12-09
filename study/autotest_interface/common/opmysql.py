@@ -1,7 +1,7 @@
 # coding = utf8
 import os
 
-from study.autotest_interface.common import config
+from study.autotest_interface.public import config
 
 os.path.abspath("..")
 """
