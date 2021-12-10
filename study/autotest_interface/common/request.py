@@ -25,7 +25,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
 class RequestInterface(object):
-    # 定义处理不同类型的请求参数，包含字典、字符串、空值
+    # 定义处理不同类型的请求参数，包含字典、字符串、空值、
     def __new_param(self, param):
         try:
             # 如果接口请求的参数是一个字符串类型的字典，则用eval函数将其还原成字典形式
