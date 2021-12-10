@@ -142,7 +142,7 @@ class RequestInterface(object):
 
 
 if __name__ == '__main__':
-    for i in range(100000):
+    for i in range(10):
         # 实例化HTTP请求类..
         test_interface = RequestInterface()
         test_db = opmysql.OperationDbInterface(host_db="127.0.0.1", user_db="root",
