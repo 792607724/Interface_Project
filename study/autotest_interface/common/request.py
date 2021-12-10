@@ -142,33 +142,35 @@ class RequestInterface(object):
 
 
 if __name__ == '__main__':
-    # 实例化HTTP请求类.
-    test_interface = RequestInterface()
-    test_db = opmysql.OperationDbInterface(host_db="127.0.0.1", user_db="root",
-                                           password_db="seevision", name_db="test_interface",
-                                           port_db=3306, link_type=0)
-    sen_sql = "select exe_mode, url_interface, header_interface, params_interface from case_interface where name_interface='ipSearch' and id=1"
-    params_interface = test_db.select_one(sen_sql)
-    if params_interface["code"] == "0000":
-        url_interface = params_interface["data"]["url_interface"]
-        headerdata = eval(params_interface["data"]["header_interface"])
-        param_interface = params_interface["data"]["params_interface"]
-        type_interface = params_interface["data"]["exe_mode"]
-        if url_interface != "" and headerdata != "" and param_interface != "" and type_interface != "":
-            result = test_interface.http_request(interface_url=url_interface, headerdata=headerdata,
-                                                 interface_param=param_interface, request_type=type_interface)
-            if result["code"] == "0000":
-                result_resp = result["data"]
-                # 将结果更新到case_interface表中，网页本身原因，无法正确处理到数据，此处示例即可，数据未处理
-                test_db.op_sql("UPDATE case_interface SET result_interface='{}' WHERE id=1".format(str(result_resp[29:57])))
-                print("处理HTTP请求成功，返回数据是：{}".format(result_resp[29:57]))
+    for i in range(100000):
+        # 实例化HTTP请求类.
+        test_interface = RequestInterface()
+        test_db = opmysql.OperationDbInterface(host_db="127.0.0.1", user_db="root",
+                                               password_db="seevision", name_db="test_interface",
+                                               port_db=3306, link_type=0)
+        sen_sql = "select exe_mode, url_interface, header_interface, params_interface from case_interface where name_interface='ipSearch' and id=1"
+        params_interface = test_db.select_one(sen_sql)
+        if params_interface["code"] == "0000":
+            url_interface = params_interface["data"]["url_interface"]
+            headerdata = eval(params_interface["data"]["header_interface"])
+            param_interface = params_interface["data"]["params_interface"]
+            type_interface = params_interface["data"]["exe_mode"]
+            if url_interface != "" and headerdata != "" and param_interface != "" and type_interface != "":
+                result = test_interface.http_request(interface_url=url_interface, headerdata=headerdata,
+                                                     interface_param=param_interface, request_type=type_interface)
+                if result["code"] == "0000":
+                    result_resp = result["data"]
+                    # 将结果更新到case_interface表中，网页本身原因，无法正确处理到数据，此处示例即可，数据未处理
+                    test_db.op_sql(
+                        "UPDATE case_interface SET result_interface='{}' WHERE id=1".format(str(result_resp[29:57])))
+                    print("处理HTTP请求成功，返回数据是：{}".format(result_resp[29:57]))
+                else:
+                    print("处理HTTP请求失败")
             else:
-                print("处理HTTP请求失败")
+                print("测试用例数据中有空值")
         else:
-            print("测试用例数据中有空值")
-    else:
-        print("获取接口测试用例数据失败")
+            print("获取接口测试用例数据失败")
 
-    # response = requests.get(url="https://ip.taobao.com/ipSearch?ipAddr=63.223.108.4", headers={'Host':'ip.taobao.com'}, verify=False, timeout=10)
-    # print(response.status_code)
-    # print(response.text)
+        # response = requests.get(url="https://ip.taobao.com/ipSearch?ipAddr=63.223.108.4", headers={'Host':'ip.taobao.com'}, verify=False, timeout=10)
+        # print(response.status_code)
+        # print(response.text)
