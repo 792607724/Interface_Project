@@ -160,8 +160,8 @@ if __name__ == '__main__':
             if result["code"] == "0000":
                 result_resp = result["data"]
                 # 将结果更新到case_interface表中，网页本身原因，无法正确处理到数据，此处示例即可，数据未处理
-                test_db.op_sql("UPDATE case_interface SET result_interface='{}' WHERE id=1".format(str(result_resp[25:50])))
-                print("处理HTTP请求成功，返回数据是：{}".format(result_resp))
+                test_db.op_sql("UPDATE case_interface SET result_interface='{}' WHERE id=1".format(str(result_resp[29:57])))
+                print("处理HTTP请求成功，返回数据是：{}".format(result_resp[29:57]))
             else:
                 print("处理HTTP请求失败")
         else:
