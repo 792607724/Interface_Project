@@ -1,0 +1,272 @@
+2021-12-08 15:28:05,531_opmysql.py[line:82]_ERROR (2003, "Can't connect to MySQL server on '12711.0.0.1' ([Errno 11001] getaddrinfo failed)")
+Traceback (most recent call last):
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 614, in connect
+    (self.host, self.port), self.connect_timeout, **kwargs
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\socket.py", line 707, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:/PycharmProjects/Interface_Project/study/autotest_interface/common/opmysql.py", line 54, in __init__
+    cursorclass=pymysql.cursors.DictCursor)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '12711.0.0.1' ([Errno 11001] getaddrinfo failed)")
+2021-12-09 20:48:01,995_opmysql.py[line:82]_ERROR (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+2021-12-09 20:53:11,664_opmysql.py[line:82]_ERROR (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+2021-12-09 20:54:10,258_opmysql.py[line:82]_ERROR (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+2021-12-09 21:00:41,573_opmysql.py[line:82]_ERROR (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lang\' at line 2')
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lang\' at line 2')
+2021-12-09 21:07:31,315_opmysql.py[line:82]_ERROR (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+2021-12-09 21:08:41,299_opmysql.py[line:82]_ERROR (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'=<!doctype html>\n<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN" xml:lan\' at line 1')
+2021-12-09 21:20:49,308_opmysql.py[line:82]_ERROR (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=<!doc WHERE id=1' at line 1")
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=<!doc WHERE id=1' at line 1")
+2021-12-09 21:21:11,245_opmysql.py[line:82]_ERROR (1054, "Unknown column 'n' in 'field list'")
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'n' in 'field list'")
+2021-12-09 21:21:41,897_opmysql.py[line:82]_ERROR (1054, "Unknown column 'n' in 'field list'")
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'n' in 'field list'")
+2021-12-09 21:23:05,825_opmysql.py[line:82]_ERROR (1054, "Unknown column 'n' in 'field list'")
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'n' in 'field list'")
+2021-12-09 21:23:20,751_opmysql.py[line:82]_ERROR (1054, "Unknown column 'n' in 'field list'")
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'n' in 'field list'")
+2021-12-09 21:24:08,875_opmysql.py[line:82]_ERROR (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\';\n\t</script>\n\t</head>\n\t<body\n\t\tclass="nojs before-login"><script>\nwith(document\' at line 40')
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Interface_Project\study\autotest_interface\common\opmysql.py", line 92, in op_sql
+    self.cur.execute(condition)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\CHENGUANGTAO\AppData\Local\Programs\Python\Python37\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\';\n\t</script>\n\t</head>\n\t<body\n\t\tclass="nojs before-login"><script>\nwith(document\' at line 40')
