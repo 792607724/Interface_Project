@@ -199,43 +199,4 @@ if __name__ == '__main__':
     print("insert success affect number:{}".format(insert_count))
     a.close_db()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     # upload to zhihu.com
-
