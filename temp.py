@@ -14,7 +14,6 @@ import os
 
 class LogCleaner():
     def __init__(self):
-        print("Cleaner")
         pass
 
     def clean_most_logs(self):
