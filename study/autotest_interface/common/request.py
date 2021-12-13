@@ -146,7 +146,7 @@ if __name__ == '__main__':
         # 实例化HTTP请求类..
         test_interface = RequestInterface()
         test_db = opmysql.OperationDbInterface(host_db="127.0.0.1", user_db="root",
-                                               password_db="seevision", name_db="test_interface",
+                                               password_db="654013908CGT", name_db="test_interface",
                                                port_db=3306, link_type=0)
         sen_sql = "select exe_mode, url_interface, header_interface, params_interface from case_interface where name_interface='ipSearch' and id=1"
         params_interface = test_db.select_one(sen_sql)
