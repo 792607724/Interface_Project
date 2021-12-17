@@ -4,7 +4,7 @@ import os
 os.path.abspath(".")
 """
     @Project:Interface_Project
-    @File:temp.py
+    @File:seevision_pyqt5.py
     @Author:十二点前要睡觉
     @Date:2021/12/10 15:32
 """
